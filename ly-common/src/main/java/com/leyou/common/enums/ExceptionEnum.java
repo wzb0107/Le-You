@@ -20,7 +20,11 @@ public enum ExceptionEnum {
      */
     PRICE_CANNOT_BE_NULL(400, "price is not null"),
     DATA_TRANSFER_ERROR(),
-    ;
+    /**
+     * 商品分类没找到哦
+     *
+     */
+    CATEGORY_NOT_FOUND(404, "category not found");
 
     /**
      * 状态码
