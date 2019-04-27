@@ -3,8 +3,6 @@ package com.leyou.item.pojo;
 import lombok.Data;
 import tk.mybatis.mapper.annotation.KeySql;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -20,15 +18,18 @@ import javax.persistence.Table;
 @Data
 public class Brand {
     @Id
-    @KeySql(useGeneratedKeys=true)
+    @KeySql(useGeneratedKeys = true)
     private Long id;
     /**
      * 品牌名称
      */
     private String name;
     /**
-     * 品牌图片
+     * 品牌图片地址
      */
     private String image;
+    /**
+     * 品牌的首字母
+     */
     private Character letter;
 }

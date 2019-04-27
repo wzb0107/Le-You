@@ -15,7 +15,7 @@ import java.util.List;
 
 public interface CategoryService {
     /**
-     * 根据ID查询category
+     * 根据ID查询category 集合
      *
      * @param pid
      * @return

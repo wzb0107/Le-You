@@ -12,5 +12,15 @@ import com.leyou.item.pojo.Brand;
  */
 
 public interface BrandService {
-    PageResult<Brand> queryBrandByPageAndSort(int page, int rows, String sortBy, Boolean desc, String key);
+    /**
+     * 品牌查询 及分页 排序
+     *
+     * @param page
+     * @param rows
+     * @param sortBy
+     * @param desc
+     * @param key
+     * @return
+     */
+    PageResult<Brand> queryBrandByPageAndSort(Integer page, Integer rows, String sortBy, Boolean desc, String key);
 }

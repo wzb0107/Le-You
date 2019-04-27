@@ -26,7 +26,7 @@ public class BrandServiceImpl implements BrandService {
     private BrandMapper brandMapper;
 
     @Override
-    public PageResult<Brand> queryBrandByPageAndSort(int page, int rows, String sortBy, Boolean desc, String key) {
+    public PageResult<Brand> queryBrandByPageAndSort(Integer page, Integer rows, String sortBy, Boolean desc, String key) {
         PageHelper.startPage(page, rows);
         Example example = new Example(Brand.class);
         if (StringUtils.isNotBlank(key)) {
@@ -34,10 +34,10 @@ public class BrandServiceImpl implements BrandService {
         }
 
         if (StringUtils.isNotBlank(sortBy)) {
-            String orderByClause = sortBy + (desc ? "DESC" : "ASC");
+            String orderByClause = sortBy + (desc ? " DESC" : " ASC");
             example.setOrderByClause(orderByClause);
         }
         Page<Brand> pageInfo = (Page<Brand>) brandMapper.selectByExample(example);
-        return new PageResult(pageInfo.getTotal(), pageInfo);
+        return new PageResult(pageInfo.getTotal(), (long) pageInfo.getPages(),pageInfo);
     }
 }

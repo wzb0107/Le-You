@@ -25,14 +25,16 @@ public class BrandController {
     @Autowired
     private BrandService brandService;
 
-    /* page：当前页，int
-     rows：每页大小，int
-     sortBy：排序字段，String
-     desc：是否为降序，boolean
-     key：搜索关键词，String
+
+    /**
+     * @param page   当前页
+     * @param rows   每页大小
+     * @param sortBy 排序字段
+     * @param desc   是否为降序
+     * @param key    搜索关键词
+     * @return
      */
     @GetMapping("page")
-
     public ResponseEntity<PageResult<Brand>> queryBrandByPageAndSort(@RequestParam(value = "page", defaultValue = "1") int page,
                                                                      @RequestParam(value = "rows", defaultValue = "5") int rows,
                                                                      @RequestParam(value = "sortBy", required = false) String sortBy,
